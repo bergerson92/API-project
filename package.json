@@ -4,6 +4,8 @@
   "description": "api project",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint . --ext .js",
+    "prettier": "prettier --config .prettierrc 'build/**/*.js' --write",
     "build": "npx tsc",
     "jasmine": "jasmine",
     "start": "nodemon src/index.ts"
@@ -14,7 +16,10 @@
     "@types/express": "^4.17.21",
     "@types/jasmine": "^5.1.2",
     "@types/node": "^20.9.0",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
+    "@typescript-eslint/parser": "^6.11.0",
     "eslint": "^8.8.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "nodemon": "^3.0.1",
     "prettier": "^2.5.1",

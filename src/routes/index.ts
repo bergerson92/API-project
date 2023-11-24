@@ -1,9 +1,7 @@
 import express from 'express';
 import images from './api/images';
-import test from './api/test';
 import path from 'path';
-import imageList from './api/imageList';
-import { appendFile } from 'fs';
+import fs from 'fs/promises';
 const routes = express.Router();
 
 // needed to run /api
@@ -13,10 +11,21 @@ routes.get('/', (req, res) => {
 
 routes.use('/images', images);
 
-routes.get('/imageList', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../public', 'imageList.html'))
-});
+// Create an API endpoint to get the list of filenames
+routes.get('/images/list', async (req, res) => {
+    try {
+        const fullFolderPath = path.join(__dirname, '../../assets/thumb');
+        const files = await fs.readdir(fullFolderPath);
 
-routes.use('/test', test);
+        const filteredFiles = files.filter(file => !file.startsWith('.'));
+
+        const filenames = filteredFiles.map(file => path.parse(file).name);
+        res.json(filenames);
+
+    } catch (error) {
+        console.error('Error reading full folder:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
 
 export default routes;

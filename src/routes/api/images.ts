@@ -2,7 +2,6 @@ import express from 'express';
 import { resizeImage } from '../../processing/imageProcessor';
 import fs from 'fs/promises';
 import path from 'path';
-//import imageList from './imageList';
 import cache from 'memory-cache';
 
 const images = express.Router();
@@ -54,12 +53,7 @@ images.get('/', async (req, res) => {
             return;
         }
 
-        //console.log('Processing image:', fileName, 'with dimensions:', width, 'x', height);
-
         await resizeImage(inputPath, outputPath, { width, height });
-
-        //console.log('Image processed successfully. Sending file:', outputPath);
-
 
         // Send the resized image as a response
         res.sendFile(outputPath);
@@ -68,7 +62,5 @@ images.get('/', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
-
-//images.use('/list', imageList);
 
 export default images;

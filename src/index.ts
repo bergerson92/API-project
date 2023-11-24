@@ -5,17 +5,14 @@ import path from 'path';
 const app = express();
 const port = 3000;
 
-//app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/api', routes);
 
-// not needed anymore due to static
-//app.get('/', (req, res) => {
-//    res.send('Welcome to the API!');
-//});
-
 // Serve static assets
 app.use(express.static(path.join(__dirname, '../public')));
+
+// Serve static files from the 'assets' folder
+app.use('/assets', express.static(path.join(__dirname, '../assets')));
 
 // Define routes for different HTML pages
 app.get('/', (req, res) => {

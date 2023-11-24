@@ -10,13 +10,31 @@
 
 <body>
     <header>
-        <h1> Image processing</h1>
-        <h2> welcome to the image resizing API</h2>
-        <h3> Do you want to resize your picture? Drag it into the full folder and type in the specs in the URL</h3>
-        <h4> Want to see all the already processed images? Visit the /imageList URL</h4>
+
     </header>
     <main>
-        <!-- <img id="resizedImage" src="#" alt="Resized Image"> -->
+        <div class="banner">
+            <div class="container">
+                <h1> Image processing</h1>
+                <p> welcome to the image resizing API</p>
+                <p> Do you want to resize your picture? Drag it into the full folder and type in the specs in the URL
+                </p>
+                <p> Want to see all the already processed images? Click the button below</p>
+                <div class="button-container">
+                    <button class="btn pictures-btn">
+                        show pictures
+                    </button>
+                    <button class="btn close-btn">
+                        close pictures
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="pictures-placeholder">
+            <p> Currently no processed picture to show to you!</p>
+        </div>
+        <div class="pictures" id="pictures-container">
+        </div>
         <script src="app.js"></script>
     </main>
 </body>

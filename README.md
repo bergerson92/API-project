@@ -16,5 +16,5 @@ Be aware that you need to drag the pictures into the full folder, before trying 
 
 You can also check out your already processed images by visting "http://localhost:3000"
 
-*node moduels are not being uploaded.
+node moduels are not being uploaded.
 

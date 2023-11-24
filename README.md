@@ -14,5 +14,5 @@ To resize images you need to type in follow URL "http://localhost:3000/api/image
 " for example http://localhost:3000/api/images?filename=fjord&width=200&height=200
 Be aware that you need to drag the pictures into the full folder, before trying to resize them.
 
-You can also check out your already processed images by visting "http://localhost:3000
+You can also check out your already processed images by visting "http://localhost:3000"
 

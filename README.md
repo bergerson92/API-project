@@ -12,12 +12,10 @@ This API allows user to resize their Image. The user has the option to show all 
 ### Usage
 To resize images you need to type in follow URL "http://localhost:3000/api/images?filename=your-image&width=desired-width&height=desired-height
 " for example http://localhost:3000/api/images?filename=fjord&width=200&height=200
-Be aware that you need to drag the pictures into the full folder, before trying to resize them.
+Pictures are already in the full order. Ready to go, type in the provided URL.
 
 You can also check out your already processed images by visting "http://localhost:3000". App.js will dynamically create content if pictures have already been resized.
 The html, css and js scripts can be viewed in the public folder.
-
-Images to test the API are stored in the images folder in the beginning.
 
 node moduels are not being uploaded.
 
